@@ -1,4 +1,4 @@
-package com.conductor.marketpay.base;
+package com.conductor.marketpay.web;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class GereciamentoProcessosBaseApplicationTests {
+public class MarketPayTechDayWebApplicationTests {
 
 	@Test
 	public void contextLoads() {

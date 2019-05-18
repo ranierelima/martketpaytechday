@@ -23,7 +23,7 @@ public class DataValidation extends BasicModel {
 	private EmitterDatabase emitterDatabase;
 
 	@Access(AccessType.FIELD)
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, targetEntity = ItemDataValidation.class, fetch = FetchType.EAGER)
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, targetEntity = ItemDataValidation.class, fetch = FetchType.LAZY)
 	@JoinColumn(name = "data_validation_id")
 	private List<ItemDataValidation> validations;
 

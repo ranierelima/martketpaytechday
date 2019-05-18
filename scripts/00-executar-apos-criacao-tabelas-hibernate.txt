@@ -1,0 +1,2 @@
+insert into sftp_configuration(id, deleted, deleted_at, created_at, updated_at, host, port, username, password) VALUES (1, false, null, now(), null, '10.50.3.5', 22021, 'marketpay', 'marketpay');
+insert into sftp_file_validation(id, filename, path, maxsize, id_stfp_configuration) VALUES (1, 'ARQ_REMESSA_TESTE.txt', '/marketpay/teste-raniere', 10, 1);
