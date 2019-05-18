@@ -15,7 +15,7 @@ public abstract class BasicModel implements Serializable {
 	private Long id;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Long getId() {
 		return id;
 	}

@@ -23,7 +23,7 @@ public class DefaultUserDetailsService implements UserDetailsService {
 
 	private static final Logger logger = LoggerFactory.getLogger(DefaultUserDetailsService.class);
 
-	private static final String USER_SQL = "select id, email, password, permission from users where email = ? and active = 1";
+	private static final String USER_SQL = "select id, email, password, permission from users where email = ? and active = true";
 
 	@Autowired
 	private DataSource dataSource;

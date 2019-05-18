@@ -30,6 +30,8 @@ public class User extends BasicDateModel{
 	private String email;
 	
 	private String password;
+	
+	private String permission;
 
 	private boolean active;
 	
@@ -44,11 +46,16 @@ public class User extends BasicDateModel{
 	public String getEmail() {
 		return email;
 	}
-
+	
 	@JsonIgnore
 	@Column(name="password", length=255)
 	public String getPassword() {
 		return password;
+	}
+
+	@Column(name="permission", length=255)
+	public String getPermission() {
+		return permission;
 	}
 
 	@Column(name = "active", columnDefinition = "boolean default true")
@@ -64,9 +71,13 @@ public class User extends BasicDateModel{
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public void setPermission(String permission) {
+		this.permission = permission;
 	}
 
 	public void setActive(boolean active) {
