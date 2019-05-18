@@ -5,11 +5,11 @@ import java.util.List;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.conductor.marketpay.base.model.generic.BasicModel;
@@ -27,7 +27,8 @@ public class DataValidation extends BasicModel {
 	@JoinColumn(name = "data_validation_id")
 	private List<ItemDataValidation> validations;
 
-	@Column(name = "id_emitter_database")
+	@OneToOne (cascade=CascadeType.ALL)
+	@JoinColumn(name="id_emitter_database", nullable=false, insertable=true, updatable=true)
 	public EmitterDatabase getEmitterDatabase() {
 		return emitterDatabase;
 	}
