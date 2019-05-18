@@ -3,14 +3,14 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>martketpaytechday-web</artifactId>
+	<artifactId>marketpaytechday-web</artifactId>
 	<packaging>jar</packaging>
 
-	<name>martketpaytechday-web</name>
+	<name>marketpaytechday-web</name>
 
 	<parent>
 		<groupId>com.conductor.marketpay</groupId>
-		<artifactId>martketpaytechday-project</artifactId>
+		<artifactId>marketpaytechday-project</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
@@ -24,7 +24,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.conductor.marketpay</groupId>
-			<artifactId>martketpaytechday-base</artifactId>
+			<artifactId>marketpaytechday-base</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>

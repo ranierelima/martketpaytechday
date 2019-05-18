@@ -6,9 +6,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration("AutomaticConfiguration")
-@ComponentScan("com.conductor.hackathon")
-@EntityScan("com.conductor.hackathon")
-@EnableJpaRepositories("com.conductor.hackathon")
+@ComponentScan("com.conductor.marketpay")
+@EntityScan("com.conductor.marketpay")
+@EnableJpaRepositories("com.conductor.marketpay")
 public class AutomaticConfiguration {
 
 }

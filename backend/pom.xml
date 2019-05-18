@@ -6,11 +6,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.conductor.marketpay</groupId>
-	<artifactId>martketpaytechday-project</artifactId>
+	<artifactId>marketpaytechday-project</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>martketpaytechday-project</name>
+	<name>marketpaytechday-project</name>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -46,8 +46,8 @@
 	</build>
 
 	<modules>
-		<module>martketpaytechday-web</module>
-		<module>martketpaytechday-base</module>
+		<module>marketpaytechday-web</module>
+		<module>marketpaytechday-base</module>
 	</modules>
 
 
