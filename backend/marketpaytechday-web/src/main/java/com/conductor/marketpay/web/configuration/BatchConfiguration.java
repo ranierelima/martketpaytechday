@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.conductor.marketpay.base.model.HistoryFileValidationSFTP;
 import com.conductor.marketpay.base.model.SFTPFileValidation;
 import com.conductor.marketpay.base.model.dto.ValidationFileSFTPDTO;
 import com.conductor.marketpay.web.batch.listerner.JobCompletionNotificationListener;
@@ -74,30 +75,23 @@ public class BatchConfiguration {
     @Bean
     public Step validacoesSFTP() {
         return stepBuilder.get("validacoesSFTP")
-            .<SFTPFileValidation, ValidationFileSFTPDTO> chunk(10)
+            .<SFTPFileValidation, HistoryFileValidationSFTP> chunk(5)
             .reader(reader())
             .processor(processor())
             .writer(writer())
             .build();
     }
     
-    @Bean
-    public Job validationLayoutDataFiles(JobCompletionNotificationListener listener, Step validacoesSFTP) {
-        return this.jobBuilder.get("validationLayoutDataFiles")
-            .incrementer(new RunIdIncrementer())
-            .listener(listener)
-            .flow(validacoesSFTP)
-            .end()
-            .build();
-    }
-
-    @Bean
-    public Step validacoesLayoutDataSFTP() {
-        return stepBuilder.get("validacoesLayoutDataSFTP")
-            .<SFTPFileValidation, ValidationFileSFTPDTO> chunk(10)
-            .reader(reader())
-            .processor(processor())
-            .writer(writer())
-            .build();
-    }
+	/*
+	 * @Bean public Job validationLayoutDataFiles(JobCompletionNotificationListener
+	 * listener, Step validacoesSFTP) { return
+	 * this.jobBuilder.get("validationLayoutDataFiles") .incrementer(new
+	 * RunIdIncrementer()) .listener(listener) .flow(validacoesSFTP) .end()
+	 * .build(); }
+	 * 
+	 * @Bean public Step validacoesLayoutDataSFTP() { return
+	 * stepBuilder.get("validacoesLayoutDataSFTP") .<SFTPFileValidation,
+	 * ValidationFileSFTPDTO> chunk(10) .reader(reader()) .processor(processor())
+	 * .writer(writer()) .build(); }
+	 */
 }
