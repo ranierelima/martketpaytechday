@@ -3,12 +3,11 @@ package com.conductor.marketpay.web.batch.reader;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import org.springframework.batch.core.annotation.AfterJob;
+import org.springframework.batch.core.annotation.BeforeStep;
 import org.springframework.batch.item.ItemReader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 
-import com.conductor.marketpay.base.model.SFTPConfiguration;
 import com.conductor.marketpay.base.model.SFTPFileValidation;
 import com.conductor.marketpay.base.service.SFTPFileValidationService;
 
@@ -20,7 +19,7 @@ public class ValidationFilesReader implements ItemReader<SFTPFileValidation>{
 	private static final Queue<SFTPFileValidation> QUEUE = new LinkedList<>();
 	private static int pageCount = 0;
 	
-	@AfterJob
+	@BeforeStep
 	public void init() {
 		Page<SFTPFileValidation> list = service.list(pageCount, "id", "asc");
 		
@@ -43,7 +42,7 @@ public class ValidationFilesReader implements ItemReader<SFTPFileValidation>{
 			init();
 		}
 		
-		return QUEUE.remove();
+		return QUEUE.isEmpty() ? null : QUEUE.remove();
 	}
 
 }
