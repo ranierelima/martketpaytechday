@@ -23,7 +23,7 @@ public class ItemLayoutFile extends BasicModel {
 
 
 	@Access(AccessType.FIELD)
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, targetEntity = ItemValidationLayoutFile.class, fetch = FetchType.EAGER)
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, targetEntity = ItemValidationLayoutFile.class, fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_item_layout_file")
 	public List<ItemValidationLayoutFile> getValidations() {
 		return validations;
