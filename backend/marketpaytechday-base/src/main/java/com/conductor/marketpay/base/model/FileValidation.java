@@ -18,6 +18,7 @@ public class FileValidation extends CompleteModel{
 	private String description;
 	private String name;
 	private String rename;
+	private String path;
 	private LayoutFile layout;
 	private DataValidation dataValidation;
 	private SFTPConfiguration sftpConfiguration;
@@ -35,6 +36,11 @@ public class FileValidation extends CompleteModel{
 	@Column(name = "rename")
 	public String getRename() {
 		return rename;
+	}
+
+	@Column(name = "path", length = 1000)
+	public String getPath() {
+		return path;
 	}
 
 	@OneToOne (cascade=CascadeType.ALL)
@@ -65,6 +71,10 @@ public class FileValidation extends CompleteModel{
 
 	public void setRename(String rename) {
 		this.rename = rename;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
 	}
 
 	public void setLayout(LayoutFile layout) {

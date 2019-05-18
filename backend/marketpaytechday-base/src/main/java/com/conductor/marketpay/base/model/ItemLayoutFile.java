@@ -1,9 +1,14 @@
 package com.conductor.marketpay.base.model;
 
-import javax.persistence.Column;
+import java.util.List;
+
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.conductor.marketpay.base.model.generic.BasicModel;
@@ -14,36 +19,18 @@ public class ItemLayoutFile extends BasicModel {
 
 	private static final long serialVersionUID = 2323370326957966405L;
 
-	private TypeItemLayout type;
-	private int startItem;
-	private int endItem;
+	private List<ItemValidationLayoutFile> validations;
 
-	@Column(name = "type")
-	@Enumerated(EnumType.STRING)
-	public TypeItemLayout getType() {
-		return type;
+
+	@Access(AccessType.FIELD)
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, targetEntity = ItemValidationLayoutFile.class, fetch = FetchType.EAGER)
+	@JoinColumn(name = "id_item_layout_file")
+	public List<ItemValidationLayoutFile> getValidations() {
+		return validations;
 	}
 
-	@Column(name = "start_item")
-	public int getStart() {
-		return startItem;
-	}
-
-	@Column(name = "end_item")
-	public int getEnd() {
-		return endItem;
-	}
-
-	public void setType(TypeItemLayout type) {
-		this.type = type;
-	}
-
-	public void setStart(int startItem) {
-		this.startItem = startItem;
-	}
-
-	public void setEnd(int endItem) {
-		this.endItem = endItem;
+	public void setValidations(List<ItemValidationLayoutFile> validations) {
+		this.validations = validations;
 	}
 
 }

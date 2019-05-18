@@ -23,11 +23,6 @@ public class ValidationLayoutDataFilesReader implements ItemReader<FileValidatio
 	public void init() {
 		Page<FileValidation> list = service.list(pageCount, "id", "asc");
 		
-		if( list.getContent().isEmpty() ) {
-			pageCount = 0;
-			list = service.list(pageCount, "id", "asc");
-		}
-
 		for ( FileValidation user : list.getContent()) {
 			QUEUE.add(user);
 		}
