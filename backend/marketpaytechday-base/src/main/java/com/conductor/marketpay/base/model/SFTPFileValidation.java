@@ -1,7 +1,10 @@
 package com.conductor.marketpay.base.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.conductor.marketpay.base.model.generic.BasicModel;
@@ -32,7 +35,8 @@ public class SFTPFileValidation extends BasicModel{
 		return path;
 	}
 	
-	@Column(name = "stfp_configuration")
+	@OneToOne (cascade=CascadeType.ALL)
+	@JoinColumn(name="id_stfp_configuration", nullable=false, insertable=true, updatable=true)
 	public SFTPConfiguration getSftpConfiguration() {
 		return sftpConfiguration;
 	}

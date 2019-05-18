@@ -13,8 +13,11 @@ import com.conductor.marketpay.base.model.SFTPFileValidation;
 import com.conductor.marketpay.base.model.dto.ValidationFileSFTPDTO;
 import com.conductor.marketpay.web.batch.listerner.JobCompletionNotificationListener;
 import com.conductor.marketpay.web.batch.processor.ValidationFilesProcessor;
+import com.conductor.marketpay.web.batch.processor.ValidationLayoutDataFilesProcessor;
 import com.conductor.marketpay.web.batch.reader.ValidationFilesReader;
+import com.conductor.marketpay.web.batch.reader.ValidationLayoutDataFilesReader;
 import com.conductor.marketpay.web.batch.writer.ValidationFilesWriter;
+import com.conductor.marketpay.web.batch.writer.ValidationLayoutDataFilesWriter;
 
 @Configuration
 public class BatchConfiguration {
@@ -29,26 +32,41 @@ public class BatchConfiguration {
 	}
 	
 	@Bean
-    public ValidationFilesReader reader() {
-        return new ValidationFilesReader();
+	public ValidationFilesReader reader() {
+		return new ValidationFilesReader();
+	}
+	
+	@Bean
+	public ValidationFilesProcessor processor() {
+		return new ValidationFilesProcessor();
+	}
+	
+	@Bean
+	public ValidationFilesWriter writer() {
+		return new ValidationFilesWriter();
+	}
+	
+	@Bean
+    public ValidationLayoutDataFilesReader readerLayout() {
+        return new ValidationLayoutDataFilesReader();
     }
 
     @Bean
-    public ValidationFilesProcessor processor() {
-        return new ValidationFilesProcessor();
+    public ValidationLayoutDataFilesProcessor processorLayout() {
+        return new ValidationLayoutDataFilesProcessor();
     }
 
     @Bean
-    public ValidationFilesWriter writer() {
-        return new ValidationFilesWriter();
+    public ValidationLayoutDataFilesWriter writerLayout() {
+        return new ValidationLayoutDataFilesWriter();
     }
     
     @Bean
-    public Job validationFiles(JobCompletionNotificationListener listener, Step step1) {
+    public Job validationFiles(JobCompletionNotificationListener listener, Step validacoesSFTP) {
         return this.jobBuilder.get("validationFiles")
             .incrementer(new RunIdIncrementer())
             .listener(listener)
-            .flow(step1)
+            .flow(validacoesSFTP)
             .end()
             .build();
     }
@@ -56,6 +74,26 @@ public class BatchConfiguration {
     @Bean
     public Step validacoesSFTP() {
         return stepBuilder.get("validacoesSFTP")
+            .<SFTPFileValidation, ValidationFileSFTPDTO> chunk(10)
+            .reader(reader())
+            .processor(processor())
+            .writer(writer())
+            .build();
+    }
+    
+    @Bean
+    public Job validationLayoutDataFiles(JobCompletionNotificationListener listener, Step validacoesSFTP) {
+        return this.jobBuilder.get("validationLayoutDataFiles")
+            .incrementer(new RunIdIncrementer())
+            .listener(listener)
+            .flow(validacoesSFTP)
+            .end()
+            .build();
+    }
+
+    @Bean
+    public Step validacoesLayoutDataSFTP() {
+        return stepBuilder.get("validacoesLayoutDataSFTP")
             .<SFTPFileValidation, ValidationFileSFTPDTO> chunk(10)
             .reader(reader())
             .processor(processor())
