@@ -5,13 +5,13 @@ import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
-import org.springframework.batch.item.database.JdbcBatchItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.conductor.marketpay.base.model.SFTPConfiguration;
 import com.conductor.marketpay.base.model.dto.ValidationFileSFTPDTO;
+import com.conductor.marketpay.web.batch.listerner.JobCompletionNotificationListener;
 import com.conductor.marketpay.web.batch.processor.ValidationFilesProcessor;
 import com.conductor.marketpay.web.batch.reader.ValidationFilesReader;
 import com.conductor.marketpay.web.batch.writer.ValidationFilesWriter;
