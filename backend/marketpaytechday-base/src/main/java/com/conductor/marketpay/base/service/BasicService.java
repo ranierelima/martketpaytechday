@@ -1,12 +1,12 @@
-package com.conductor.hackathon.base.service;
+package com.conductor.marketpay.base.service;
 
 import java.util.Optional;
 
 import org.springframework.data.domain.Page;
 import org.springframework.lang.Nullable;
 
-import com.conductor.hackathon.base.exception.EntityNotFoundException;
-import com.conductor.hackathon.base.model.generic.BasicModel;
+import com.conductor.marketpay.base.exception.EntityNotFoundException;
+import com.conductor.marketpay.base.model.generic.BasicModel;
 
 public interface BasicService <T extends BasicModel>{
 	

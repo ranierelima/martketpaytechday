@@ -1,6 +1,6 @@
-package com.conductor.hackathon.base.service;
+package com.conductor.marketpay.base.service;
 
-import com.conductor.hackathon.base.model.User;
+import com.conductor.marketpay.base.model.User;
 
 public interface UserService extends BasicService<User>{
 

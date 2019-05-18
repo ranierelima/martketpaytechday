@@ -1,10 +1,10 @@
-package com.conductor.hackathon.base.repository;
+package com.conductor.marketpay.base.repository;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.conductor.hackathon.base.model.User;
+import com.conductor.marketpay.base.model.User;
 
 @Repository
 public interface UserRepository extends BasicRepository<User>{

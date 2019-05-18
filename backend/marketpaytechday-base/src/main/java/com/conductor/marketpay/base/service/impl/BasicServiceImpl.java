@@ -1,4 +1,4 @@
-package com.conductor.hackathon.base.service.impl;
+package com.conductor.marketpay.base.service.impl;
 
 import java.util.Date;
 import java.util.Optional;
@@ -9,12 +9,12 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Order;
 import org.springframework.lang.Nullable;
 
-import com.conductor.hackathon.base.exception.EntityNotFoundException;
-import com.conductor.hackathon.base.model.generic.BasicDateModel;
-import com.conductor.hackathon.base.model.generic.BasicModel;
-import com.conductor.hackathon.base.model.generic.CompleteModel;
-import com.conductor.hackathon.base.repository.BasicRepository;
-import com.conductor.hackathon.base.service.BasicService;
+import com.conductor.marketpay.base.exception.EntityNotFoundException;
+import com.conductor.marketpay.base.model.generic.BasicDateModel;
+import com.conductor.marketpay.base.model.generic.BasicModel;
+import com.conductor.marketpay.base.model.generic.CompleteModel;
+import com.conductor.marketpay.base.repository.BasicRepository;
+import com.conductor.marketpay.base.service.BasicService;
 
 public class BasicServiceImpl<T extends BasicModel> implements BasicService<T>{
 

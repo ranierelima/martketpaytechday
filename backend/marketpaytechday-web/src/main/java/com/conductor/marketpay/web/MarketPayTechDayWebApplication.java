@@ -1,12 +1,12 @@
-package com.conductor.hackathon.web;
+package com.conductor.marketpay.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GeekForAWeekWebApplication {
+public class MarketPayTechDayWebApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GeekForAWeekWebApplication.class, args);
+		SpringApplication.run(MarketPayTechDayWebApplication.class, args);
 	}
 }

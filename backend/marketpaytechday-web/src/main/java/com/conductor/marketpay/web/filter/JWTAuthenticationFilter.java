@@ -1,4 +1,4 @@
-package com.conductor.hackathon.web.filter;
+package com.conductor.marketpay.web.filter;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,9 +19,9 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import com.conductor.hackathon.base.model.dto.AuthenticationDTO;
-import com.conductor.hackathon.web.security.AppUser;
-import com.conductor.hackathon.web.security.SecurityConstants;
+import com.conductor.marketpay.base.model.dto.AuthenticationDTO;
+import com.conductor.marketpay.web.security.AppUser;
+import com.conductor.marketpay.web.security.SecurityConstants;
 
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 	private AuthenticationManager authenticationManager;

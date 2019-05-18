@@ -1,4 +1,4 @@
-package com.conductor.hackathon.base.model;
+package com.conductor.marketpay.base.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,7 +6,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.conductor.hackathon.base.model.generic.BasicDateModel;
+import com.conductor.marketpay.base.model.generic.BasicDateModel;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 

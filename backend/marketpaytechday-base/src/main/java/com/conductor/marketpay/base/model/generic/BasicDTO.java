@@ -1,4 +1,4 @@
-package com.conductor.hackathon.base.model.generic;
+package com.conductor.marketpay.base.model.generic;
 
 import java.util.HashMap;
 import java.util.List;

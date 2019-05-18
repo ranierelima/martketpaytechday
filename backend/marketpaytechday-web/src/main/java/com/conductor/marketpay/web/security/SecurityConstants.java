@@ -1,4 +1,4 @@
-package com.conductor.hackathon.web.security;
+package com.conductor.marketpay.web.security;
 
 public class SecurityConstants {
 	private SecurityConstants() {}

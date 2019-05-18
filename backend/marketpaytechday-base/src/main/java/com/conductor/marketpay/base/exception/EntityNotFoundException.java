@@ -1,4 +1,4 @@
-package com.conductor.hackathon.base.exception;
+package com.conductor.marketpay.base.exception;
 
 public class EntityNotFoundException extends BaseException {
 	

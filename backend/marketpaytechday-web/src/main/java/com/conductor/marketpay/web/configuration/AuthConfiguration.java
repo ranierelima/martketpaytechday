@@ -1,4 +1,4 @@
-package com.conductor.hackathon.web.configuration;
+package com.conductor.marketpay.web.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
@@ -12,10 +12,10 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import com.conductor.hackathon.web.filter.JWTAuthenticationFilter;
-import com.conductor.hackathon.web.filter.JWTAuthorizationFilter;
-import com.conductor.hackathon.web.security.DefaultUserDetailsService;
-import com.conductor.hackathon.web.security.SecurityConstants;
+import com.conductor.marketpay.web.filter.JWTAuthenticationFilter;
+import com.conductor.marketpay.web.filter.JWTAuthorizationFilter;
+import com.conductor.marketpay.web.security.DefaultUserDetailsService;
+import com.conductor.marketpay.web.security.SecurityConstants;
 
 @EnableWebSecurity
 public class AuthConfiguration extends WebSecurityConfigurerAdapter {

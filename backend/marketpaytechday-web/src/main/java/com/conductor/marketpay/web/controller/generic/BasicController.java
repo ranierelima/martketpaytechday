@@ -1,4 +1,4 @@
-package com.conductor.hackathon.web.controller.generic;
+package com.conductor.marketpay.web.controller.generic;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -27,13 +27,13 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.conductor.hackathon.base.exception.EntityNotFoundException;
-import com.conductor.hackathon.base.model.generic.BasicModel;
-import com.conductor.hackathon.base.service.BasicService;
-import com.conductor.hackathon.web.response.GenericMessage;
-import com.conductor.hackathon.web.response.GenericMessageErrorDTO;
-import com.conductor.hackathon.web.response.GenericMessageSuccessDTO;
-import com.conductor.hackathon.web.response.ResponseMessage;
+import com.conductor.marketpay.base.exception.EntityNotFoundException;
+import com.conductor.marketpay.base.model.generic.BasicModel;
+import com.conductor.marketpay.base.service.BasicService;
+import com.conductor.marketpay.web.response.GenericMessage;
+import com.conductor.marketpay.web.response.GenericMessageErrorDTO;
+import com.conductor.marketpay.web.response.GenericMessageSuccessDTO;
+import com.conductor.marketpay.web.response.ResponseMessage;
 
 public class BasicController <T extends BasicModel>{
 	

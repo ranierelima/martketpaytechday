@@ -1,4 +1,4 @@
-package com.conductor.hackathon.web.response;
+package com.conductor.marketpay.web.response;
 
 public abstract class GenericMessage {
 	

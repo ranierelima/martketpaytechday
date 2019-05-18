@@ -1,4 +1,4 @@
-package com.conductor.hackathon.base.model.dto;
+package com.conductor.marketpay.base.model.dto;
 
 public class AuthenticationDTO {
 

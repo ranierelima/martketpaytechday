@@ -1,4 +1,4 @@
-package com.conductor.hackathon.web.filter;
+package com.conductor.marketpay.web.filter;
 
 import java.io.IOException;
 
@@ -17,9 +17,9 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.TokenExpiredException;
-import com.conductor.hackathon.web.security.AppUser;
-import com.conductor.hackathon.web.security.DefaultUserDetailsService;
-import com.conductor.hackathon.web.security.SecurityConstants;
+import com.conductor.marketpay.web.security.AppUser;
+import com.conductor.marketpay.web.security.DefaultUserDetailsService;
+import com.conductor.marketpay.web.security.SecurityConstants;
 
 public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 

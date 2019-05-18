@@ -1,4 +1,4 @@
-package com.conductor.hackathon.base.configuration;
+package com.conductor.marketpay.base.configuration;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;

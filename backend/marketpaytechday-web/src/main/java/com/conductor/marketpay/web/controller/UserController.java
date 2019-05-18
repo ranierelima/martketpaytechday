@@ -1,4 +1,4 @@
-package com.conductor.hackathon.web.controller;
+package com.conductor.marketpay.web.controller;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -16,12 +16,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.conductor.hackathon.base.model.User;
-import com.conductor.hackathon.base.service.UserService;
-import com.conductor.hackathon.web.controller.generic.BasicController;
-import com.conductor.hackathon.web.response.GenericMessage;
-import com.conductor.hackathon.web.response.GenericMessageErrorDTO;
-import com.conductor.hackathon.web.security.SecurityUtil;
+import com.conductor.marketpay.base.model.User;
+import com.conductor.marketpay.base.service.UserService;
+import com.conductor.marketpay.web.controller.generic.BasicController;
+import com.conductor.marketpay.web.response.GenericMessage;
+import com.conductor.marketpay.web.response.GenericMessageErrorDTO;
+import com.conductor.marketpay.web.security.SecurityUtil;
 
 @RestController
 @RequestMapping("/user")

@@ -1,11 +1,11 @@
-package com.conductor.hackathon.base.service.impl;
+package com.conductor.marketpay.base.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.conductor.hackathon.base.model.User;
-import com.conductor.hackathon.base.repository.UserRepository;
-import com.conductor.hackathon.base.service.UserService;
+import com.conductor.marketpay.base.model.User;
+import com.conductor.marketpay.base.repository.UserRepository;
+import com.conductor.marketpay.base.service.UserService;
 
 @Service
 public class UserServiceImpl extends BasicServiceImpl<User> implements UserService{
