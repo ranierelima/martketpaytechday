@@ -12,35 +12,45 @@ public class SFTPConfiguration extends CompleteModel {
 
 	private static final long serialVersionUID = -4960029823228302660L;
 
-	private String fileName;
-	private long maxSize;
-	private String path;
+	private String host;
+	private Integer port;
+	private String username;
+	private String password;
 
-	@Column(name = "filename", length = 400)
-	public String getFileName() {
-		return fileName;
+	@Column(name = "host")
+	public String getHost() {
+		return host;
 	}
 
-	@Column(name = "maxsize")
-	public long getMaxSize() {
-		return maxSize;
+	@Column(name = "port")
+	public Integer getPort() {
+		return port;
 	}
 
-	@Column(name = "path", length = 500)
-	public String getPath() {
-		return path;
+	@Column(name = "username")
+	public String getUsername() {
+		return username;
 	}
 
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
+	@Column(name = "password")
+	public String getPassword() {
+		return password;
 	}
 
-	public void setMaxSize(long maxSize) {
-		this.maxSize = maxSize;
+	public void setHost(String host) {
+		this.host = host;
 	}
 
-	public void setPath(String path) {
-		this.path = path;
+	public void setPort(Integer port) {
+		this.port = port;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }

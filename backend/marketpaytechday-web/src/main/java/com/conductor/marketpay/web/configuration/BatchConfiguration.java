@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.conductor.marketpay.base.model.SFTPConfiguration;
+import com.conductor.marketpay.base.model.SFTPFileValidation;
 import com.conductor.marketpay.base.model.dto.ValidationFileSFTPDTO;
 import com.conductor.marketpay.web.batch.listerner.JobCompletionNotificationListener;
 import com.conductor.marketpay.web.batch.processor.ValidationFilesProcessor;
@@ -56,7 +56,7 @@ public class BatchConfiguration {
     @Bean
     public Step validacoesSFTP() {
         return stepBuilder.get("validacoesSFTP")
-            .<SFTPConfiguration, ValidationFileSFTPDTO> chunk(10)
+            .<SFTPFileValidation, ValidationFileSFTPDTO> chunk(10)
             .reader(reader())
             .processor(processor())
             .writer(writer())

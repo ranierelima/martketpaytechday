@@ -9,26 +9,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 
 import com.conductor.marketpay.base.model.SFTPConfiguration;
-import com.conductor.marketpay.base.service.SFTPConfigurationService;
+import com.conductor.marketpay.base.model.SFTPFileValidation;
+import com.conductor.marketpay.base.service.SFTPFileValidationService;
 
-public class ValidationFilesReader implements ItemReader<SFTPConfiguration>{
+public class ValidationFilesReader implements ItemReader<SFTPFileValidation>{
 
 	@Autowired
-	private SFTPConfigurationService service;
+	private SFTPFileValidationService service;
 	
-	private static final Queue<SFTPConfiguration> QUEUE = new LinkedList<>();
+	private static final Queue<SFTPFileValidation> QUEUE = new LinkedList<>();
 	private static int pageCount = 0;
 	
 	@AfterJob
 	public void init() {
-		Page<SFTPConfiguration> list = service.list(pageCount, "id", "asc");
+		Page<SFTPFileValidation> list = service.list(pageCount, "id", "asc");
 		
 		if( list.getContent().isEmpty() ) {
 			pageCount = 0;
 			list = service.list(pageCount, "id", "asc");
 		}
 
-		for ( SFTPConfiguration user : list.getContent()) {
+		for ( SFTPFileValidation user : list.getContent()) {
 			QUEUE.add(user);
 		}
 		
@@ -36,7 +37,7 @@ public class ValidationFilesReader implements ItemReader<SFTPConfiguration>{
 	}
 	
 	@Override
-	public SFTPConfiguration read() throws Exception {
+	public SFTPFileValidation read() throws Exception {
 		
 		if(QUEUE.isEmpty()) {
 			init();
