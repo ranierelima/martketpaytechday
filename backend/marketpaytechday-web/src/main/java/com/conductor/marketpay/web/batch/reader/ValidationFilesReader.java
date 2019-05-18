@@ -23,10 +23,10 @@ public class ValidationFilesReader implements ItemReader<SFTPFileValidation>{
 	public void init() {
 		Page<SFTPFileValidation> list = service.list(pageCount, "id", "asc");
 		
-		if( list.getContent().isEmpty() ) {
-			pageCount = 0;
-			list = service.list(pageCount, "id", "asc");
-		}
+//		if( list.getContent().isEmpty() ) {
+//			pageCount = 0;
+//			list = service.list(pageCount, "id", "asc");
+//		}
 
 		for ( SFTPFileValidation user : list.getContent()) {
 			QUEUE.add(user);

@@ -1,4 +1,4 @@
-package br.com.wedodigital.gereciamentoprocessosbase;
+package com.conductor.marketpay.base;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
