@@ -44,7 +44,7 @@ public class BatchConfiguration {
     }
     
     @Bean
-    public Job importUserJob(JobCompletionNotificationListener listener, Step step1) {
+    public Job validationFiles(JobCompletionNotificationListener listener, Step step1) {
         return this.jobBuilder.get("validationFiles")
             .incrementer(new RunIdIncrementer())
             .listener(listener)
@@ -54,7 +54,7 @@ public class BatchConfiguration {
     }
 
     @Bean
-    public Step step1() {
+    public Step validacoesSFTP() {
         return stepBuilder.get("validacoesSFTP")
             .<SFTPConfiguration, ValidationFileSFTPDTO> chunk(10)
             .reader(reader())
